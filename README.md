@@ -4,7 +4,7 @@ Uma plataforma moderna de análise financeira pessoal que transforma extratos ba
 
 O Aureon Finance permite importar extratos em formato texto, identificar automaticamente receitas e despesas, categorizar transações, gerar indicadores financeiros e visualizar o comportamento financeiro através de dashboards interativos.
 
-Acesse o projeto pelo Link: . . .
+Acesse o projeto pelo Link: https://jullyoo.github.io/Aureon-Finance/
 
 ---
 
