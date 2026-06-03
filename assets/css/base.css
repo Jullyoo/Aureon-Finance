@@ -1,0 +1,84 @@
+:root {
+  --bg-primary: #060606;
+  --bg-secondary: #0c0c0c;
+
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+
+  --border-color: #19171b;
+  --border-hover: #5d0018;
+
+  --button-bg: #19171b;
+  --button-hover: #d29f22;
+
+  --accent: #b91c1c;
+  --accent-light: #dc2626;
+  --accent-dark: #7f1d1d;
+
+  --blue: #2563eb;
+  --green: #059669;
+  --red: #dc2626;
+  --yellow: #d97706;
+
+  --shadow:0 10px 25px rgba(0, 0, 0, 0.25);
+
+  --radius: 16px;
+
+  --transition: 0.2s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Inter, Arial, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  line-height: 1.5;
+  transition: background var(--transition), color var(--transition);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(220,38,38,.12),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(185,28,28,.08),
+      transparent 40%
+    );
+  pointer-events: none;
+  z-index: -1;
+}
+
+button, input, textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+canvas {
+  width: 100% !important;
+  max-height: 420px;
+}

@@ -1,0 +1,39 @@
+body.light {
+
+  --bg-primary: #f1f5f9;
+  --bg-secondary: #ffffff;
+
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+
+  --border-color: #dbeafe;
+}
+
+body.light .upload-button {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+body.light .upload-button:hover {
+  background: #cbd5e1;
+}
+
+body.light textarea,
+body.light input {
+
+  background: white;
+
+  color: #0f172a;
+}
+
+body.light table th {
+
+  background:
+    rgba(15, 23, 42, 0.04);
+}
+
+body.light table tbody tr:hover {
+
+  background:
+    rgba(15, 23, 42, 0.03);
+}

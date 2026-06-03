@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Aureon Finance</title>
+
+  <link rel="stylesheet" href="assets/css/index.css"/>
+  <link rel="manifest" href="manifest.json"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+  <script type="module" src="assets/js/app.js" defer></script>
+</head>
+
+<body>
+
+<header class="header">
+
+  <div class="logo-wrapper">
+    <div class="logo-icon">
+      <i class="fa-solid fa-chart-pie"></i>
+    </div>
+
+    <div>
+      <h1>Aureon Finance</h1>
+      <p>Plataforma de controle financeiro, de Julyo Capitale</p>
+    </div>
+
+  </div>
+
+  <button id="toggleThemeBtn">
+    <i class="fa-solid fa-moon"></i>Tema</button>
+
+</header>
+
+  <main class="container">
+
+    <section class="card">
+
+      <div class="section-header">
+        <h2>Importação de Extrato</h2>
+      </div>
+
+      <textarea id="statementInput" placeholder="Cole seu extrato bancário..."></textarea>
+
+      <div class="actions">
+        <label class="upload-button">Importar Arquivo
+          <input type="file" id="fileInput" accept=".txt,.csv" hidden/>
+        </label>
+        <button id="processBtn" class="mainBtn" >Processar</button>
+        <button id="clearBtn" class="mainBtn">Limpar</button>
+        <button id="exportBtn" class="mainBtn">Exportar CSV</button>
+      </div>
+
+    </section>
+
+  <section class="stats-grid">
+
+    <article class="stat-card income">
+      <div class="card-top">
+        <i class="fa-solid fa-arrow-trend-up"></i>
+        <span class="card-label">Receitas</span>
+      </div>
+      <span id="incomeValue">R$ 0,00</span>
+    </article>
+
+    <article class="stat-card expense">
+      <div class="card-top">
+        <i class="fa-solid fa-arrow-trend-down"></i>
+        <span class="card-label">Despesas</span>
+      </div>
+      <span id="expenseValue">R$ 0,00</span>
+    </article>
+
+    <article class="stat-card balance">
+      <div class="card-top">
+        <i class="fa-solid fa-wallet"></i>
+        <span class="card-label">Saldo</span>
+      </div>
+      <span id="balanceValue">R$ 0,00</span>
+    </article>
+
+  </section>
+
+  <section class="card">
+
+    <div class="section-header">
+      <h2>Análise Financeira</h2>
+    </div>
+
+    <div class="charts">
+
+      <div class="chart-card">
+        <div class="chart-header">
+          <i class="fa-solid fa-chart-pie"></i>
+          <h3>Distribuição Financeira</h3>
+        </div>
+        <canvas id="categoryChart"></canvas>
+      </div>
+
+      <div class="chart-card">
+        <div class="chart-header">
+          <i class="fa-solid fa-chart-column"></i>
+          <h3>Débitos por Categoria</h3>
+        </div>
+        <canvas id="expenseChart"></canvas>
+      </div>
+
+      <div class="chart-card">
+        <div class="chart-header">
+          <i class="fa-solid fa-chart-column"></i>
+          <h3>Créditos por Categoria</h3>
+        </div>
+        <canvas id="incomeChart"></canvas>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="card">
+
+    <div class="section-header">
+      <h2>Regra 50-30-20</h2>
+    </div>
+
+    <div class="rule-grid">
+
+      <div class="highlight">
+        <i class="fa-solid fa-house"></i>
+        <h3>Necessidades</h3>
+        <p id="needsPercent">0%</p>
+      </div>
+
+      <div class="highlight">
+        <i class="fa-solid fa-star"></i>
+        <h3>Desejos</h3>
+        <p id="wantsPercent">0%</p>
+      </div>
+
+      <div class="highlight">
+        <i class="fa-solid fa-chart-line"></i>
+        <h3>Investimentos</h3>
+        <p id="investPercent">0%</p>
+      </div>
+
+    </div>
+
+  <div id="alerts"></div>
+
+  </section>
+
+  <section class="card">
+    <div class="section-header">
+      <h2>Simulação Financeira</h2>
+    </div>
+    <input type="range" id="reductionRange" min="0" max="100" value="10"/>
+    <p>Redução: <strong><span id="reductionValue">10</span>%</strong></p>
+    <div class="simulation-result">
+      <h3>Economia anual estimada</h3>
+      <span id="simulationValue">R$ 0,00</span>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="section-header"><h2>Meta Mensal</h2></div>
+    <input type="number" id="monthlyGoal" placeholder="Informe sua meta"/>
+    <button id="saveGoalBtn">Salvar Meta</button>
+    <div id="goalResult"></div>
+  </section>
+
+  <section class="card">
+    <div class="section-header">
+      <h2>Transações</h2>
+    </div>
+    <div class="table-wrapper">
+
+      <table>
+
+        <thead>
+          <tr>
+            <th>Descrição</th>
+            <th>Categoria</th>
+            <th>Tipo</th>
+            <th>Valor</th>
+          </tr>
+        </thead>
+
+        <tbody id="transactionsTable"></tbody>
+
+      </table>
+
+    </div>
+
+  </section>
+
+  </main>
+
+</body>
+</html>
